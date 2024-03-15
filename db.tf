@@ -26,14 +26,14 @@ resource "aws_db_instance" "create_instance" {
 
   vpc_security_group_ids = [aws_security_group.rds.id]
 
-  license_model         = "general-public-license"
+  license_model         = "postgresql-license"
   multi_az              = false
   deletion_protection   = false
   backup_retention_period = 1
 }
 
 resource "aws_security_group" "rds" {
-  name = "test6"
+  name = "changeme"
   vpc_id = "{{VPC_ID}}"
 
   ingress {
