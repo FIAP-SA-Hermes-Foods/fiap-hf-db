@@ -1,4 +1,3 @@
-/*
 data "aws_db_instance" "check_instance" {
   db_instance_identifier = "{{NAME_DB}}"
 }
@@ -6,14 +5,14 @@ data "aws_db_instance" "check_instance" {
 locals {
   instance_exists = length(data.aws_db_instance.check_instance) > 0
 }
-*/
+
 
 provider "aws" {
   region = "us-east-1"
 }
 
 resource "aws_db_instance" "create_instance" {
-  #count = local.instance_exists ? 0 : 1 #? verifica se existe a instancia desejada
+  count = local.instance_exists ? 0 : 1 #? verifica se existe a instancia desejada
 
   identifier            = "{{NAME_DB}}"
   engine                = "postgres"
