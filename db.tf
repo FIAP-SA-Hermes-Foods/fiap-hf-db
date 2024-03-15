@@ -11,7 +11,7 @@ provider "aws" {
 }
 
 resource "aws_db_instance" "create_instance" {
-  count = local.instance_exists ? 0 : 1 #? verifica se existe a instancia desejada
+  count = local.instance_exists ? 1 : 0 #? verifica se existe a instancia desejada
 
   identifier            = "{{NAME_DB}}"
   engine                = "postgres"
