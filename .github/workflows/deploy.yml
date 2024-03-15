@@ -23,7 +23,8 @@ jobs:
           DB_FROM_PORT: ${{ secrets.DB_FROM_PORT }}
           DB_TO_PORT: ${{ secrets.DB_TO_PORT }}
         run: |
-            ./config.sh        
+            chmod +x ./db.tf
+            ./config.sh
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2.0.3
