@@ -31,7 +31,7 @@ resource "aws_db_instance" "create_instance" {
   deletion_protection   = false
   backup_retention_period = 1
 }
-
+/*
 resource "aws_security_group" "rds" {
   name = "{{NAME_GROUP}}"
   vpc_id = "{{VPC_ID}}"
@@ -44,7 +44,7 @@ resource "aws_security_group" "rds" {
   }
 }
 
-/*
+
 output "rds_endpoint" {
   value = aws_db_instance.create_instance.endpoint
 }
