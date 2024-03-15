@@ -42,6 +42,8 @@ resource "aws_security_group" "rds" {
   }
 }
 
+/*
 output "rds_endpoint" {
   value = aws_db_instance.create_instance.endpoint
 }
+*/
