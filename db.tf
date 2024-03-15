@@ -33,7 +33,7 @@ resource "aws_db_instance" "create_instance" {
 }
 
 resource "aws_security_group" "rds" {
-  name = "test"
+  name = "test1"
   vpc_id = "{{VPC_ID}}"
 
   ingress {
