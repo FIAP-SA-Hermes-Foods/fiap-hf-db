@@ -17,7 +17,7 @@ resource "aws_db_instance" "create_instance" {
 
   identifier            = "{{NAME_DB}}"
   engine                = "postgres"
-  engine_version        = "14"
+  engine_version        = "16.1"
   instance_class        = "db.t3.micro"
   allocated_storage     = 20
 
@@ -33,7 +33,7 @@ resource "aws_db_instance" "create_instance" {
 }
 
 resource "aws_security_group" "rds" {
-  name = "test2"
+  name = "test3"
   vpc_id = "{{VPC_ID}}"
 
   ingress {
