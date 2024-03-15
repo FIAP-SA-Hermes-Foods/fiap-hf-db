@@ -1,18 +1,8 @@
-data "aws_db_instance" "check_instance" {
-  db_instance_identifier = "{{NAME_DB}}"
-}
-
-locals {
-  instance_exists = length(data.aws_db_instance.check_instance) > 0
-}
-
-
 provider "aws" {
   region = "us-east-1"
 }
 
 resource "aws_db_instance" "create_instance" {
-  count = local.instance_exists ? 0 : 1 #? verifica se existe a instancia desejada
 
   identifier            = "{{NAME_DB}}"
   engine                = "postgres"
@@ -42,9 +32,3 @@ resource "aws_security_group" "rds" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
-/*
-output "rds_endpoint" {
-  value = aws_db_instance.create_instance.endpoint
-}
-*/
