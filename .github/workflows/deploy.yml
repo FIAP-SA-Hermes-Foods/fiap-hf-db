@@ -3,8 +3,7 @@ name: Deploy Terraform
 
 on:
   push:
-    tags: 
-        - 'release'
+    branches: [ main ]
 
 jobs:
   deploy:
